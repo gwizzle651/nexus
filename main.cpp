@@ -3,14 +3,17 @@
 
 int main(int argc, char *argv[])
 {
-    QApplication app(argc, argv);  // Initializes the application
-
-     app.setApplicationName("Nexus");
+    QApplication app(argc, argv);
     
-    QWidget window;  // Create a window
-    window.resize(250, 150);  // Set the size of the window
-    window.setWindowTitle("Basic Qt Application");  // Set the title of the window
-    window.show();  // Show the window
+    // Set application metadata
+    app.setOrganizationName("Sentinels' Forge");
+    //app.setOrganizationDomain("mycompany.com");
+    app.setApplicationName("Nexus");
 
-    return app.exec();  // Starts the application event loop
+    QWidget window;
+    window.resize(250, 150);
+    window.setWindowTitle(app.applicationName());  // Use the application name as the window title
+    window.show();
+
+    return app.exec();
 }
